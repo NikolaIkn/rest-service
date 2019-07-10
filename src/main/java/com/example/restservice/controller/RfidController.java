@@ -21,6 +21,7 @@ public class RfidController {
         this.rfidService = rfidService;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping
     List<Rfid> findAllRfid(){
         return rfidService.findAllRfid();
@@ -31,6 +32,7 @@ public class RfidController {
         return rfidService.findRfidById(id);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Rfid saveRfid(@RequestBody Rfid rfid){
